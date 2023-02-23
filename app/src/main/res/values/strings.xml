@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LocationList</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="add_place">Add Place</string>
+</resources>
