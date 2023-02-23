@@ -137,7 +137,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         }else{
             mMap.clear();
-            Place selectedPlace = (Place) intent.getSerializableExtra("place");
+            selectedPlace = (Place) intent.getSerializableExtra("place");
             LatLng latlng = new LatLng(selectedPlace.latitude,selectedPlace.longitude);
             mMap.addMarker(new MarkerOptions().position(latlng).title(selectedPlace.name));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latlng,14));
