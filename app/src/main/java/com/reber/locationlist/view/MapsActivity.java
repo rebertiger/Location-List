@@ -174,9 +174,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void save(View view) {
-        Place place = new Place(binding.placeNameText.getText().toString(), selectedLatitude, selectedLongitude);
-        compositeDisposable.add(placeDao.insert(place).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(MapsActivity.this::handleResponse));
-        //placeDao.insert(place).subscribeOn(Schedulers.io()).subscribe();
+        if (binding.placeNameText.getText().toString().matches("")){
+            Toast.makeText(MapsActivity.this, "You have to type a name to save the location first.", Toast.LENGTH_SHORT).show();
+        }else{
+            Place place = new Place(binding.placeNameText.getText().toString(), selectedLatitude, selectedLongitude);
+            compositeDisposable.add(placeDao.insert(place).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(MapsActivity.this::handleResponse));
+            //placeDao.insert(place).subscribeOn(Schedulers.io()).subscribe();
+        }
+
 
     }
 
