@@ -142,6 +142,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.addMarker(new MarkerOptions().position(latlng).title(selectedPlace.name));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latlng,14));
             binding.placeNameText.setText(selectedPlace.name);
+            binding.placeNameText.setFocusable(false);
             binding.saveButton.setVisibility(View.GONE);
             binding.deleteButton.setVisibility(View.VISIBLE);
         }
