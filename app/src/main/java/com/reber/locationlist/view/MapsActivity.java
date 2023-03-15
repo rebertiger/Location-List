@@ -141,6 +141,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLng latlng = new LatLng(selectedPlace.latitude,selectedPlace.longitude);
             mMap.addMarker(new MarkerOptions().position(latlng).title(selectedPlace.name));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latlng,14));
+            binding.placeNameText.setFocusable(false);
             binding.placeNameText.setText(selectedPlace.name);
             binding.saveButton.setVisibility(View.GONE);
             binding.deleteButton.setVisibility(View.VISIBLE);
@@ -208,4 +209,3 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         compositeDisposable.clear();
     }
 }
-
